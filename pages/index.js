@@ -1,5 +1,6 @@
-import { Box, Container, Typography } from "@material-ui/core";
+import { Box, Container } from "@material-ui/core";
 import Head from "next/head";
+import Hero from "../components/hero";
 import Layout from "../components/layout";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
         <title>Ashwin Bhatkal - Storyteller, Developer, Blogger</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Hero />
 
       <Container maxWidth="md">
         <Box my={2} textAlign="justify">
