@@ -4,6 +4,7 @@ import {
   Box,
   Container,
   IconButton,
+  makeStyles,
   SwipeableDrawer,
   Toolbar,
   Typography,
@@ -11,8 +12,28 @@ import {
 } from "@material-ui/core";
 import { Close, Menu } from "@material-ui/icons";
 import NavList from "../navList";
+import Link from "next/link";
+
+const useStyles = makeStyles((theme) => ({
+  logo: {
+    cursor: "pointer",
+    transform: "skewX(0deg)",
+    transition: "transform 1s",
+
+    "&:hover": {
+      color: theme.palette.primary.main,
+      transform: "skewX(-15deg)",
+    },
+    letterSpacing: theme.spacing(0.875),
+    fontWeight: 100,
+  },
+  surName: {
+    fontWeight: 500,
+  },
+}));
 
 export default function Header() {
+  const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("xs"));
 
@@ -37,7 +58,12 @@ export default function Header() {
               justifyContent="space-between"
               alignItems="center"
             >
-              <Typography variant="h6">ASHWIN BHATKAL</Typography>
+              <Link href="/">
+                <Typography variant="h6" className={classes.logo}>
+                  ASHWIN&nbsp;
+                  <span className={classes.surName}>BHATKAL</span>
+                </Typography>
+              </Link>
               {isMobile ? (
                 <Box>
                   <IconButton onClick={toggleDrawer(true)}>
@@ -58,7 +84,7 @@ export default function Header() {
                       <IconButton onClick={toggleDrawer(true)}>
                         <Close />
                       </IconButton>
-                      <NavList isMobile/>
+                      <NavList isMobile />
                     </Box>
                   </SwipeableDrawer>
                 </Box>

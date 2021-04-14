@@ -2,11 +2,12 @@ import { Box, makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   hero: {
+    // position: "relative",
     height: "75vh",
     width: "100%",
     display: "grid",
     alignItems: "center",
-    backgroundImage: "url(/images/hero1.jpg)",
+    backgroundImage: "url(/images/hero.jpg)",
     backgroundSize: "cover",
     color: theme.palette.common.white,
 
@@ -19,6 +20,12 @@ const useStyles = makeStyles((theme) => ({
   heroText: {
     textAlign: "center",
   },
+  // overlay: {
+  //   position: "absolute",
+  //   bottom: 0,
+  //   right: 0,
+  //   transform: "rotate(180deg)",
+  // },
 }));
 
 export default function Hero() {
@@ -29,6 +36,11 @@ export default function Hero() {
       <Box className={classes.heroText}>
         <Typography variant="h2">ALOLA, I'M ASHWIN</Typography>
       </Box>
+      {/* <img
+        src="/images/heroTriangle.svg"
+        alt="overlay"
+        className={classes.overlay}
+      /> */}
     </Box>
   );
 }

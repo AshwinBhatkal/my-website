@@ -29,6 +29,8 @@ export default function Home() {
             </Typography>
           </section>
         </Box>
+      </Container>
+      <Container maxWidth="md">
         <Box clone my={12}>
           <section>
             <Typography variant="h2" align="center" gutterBottom>
