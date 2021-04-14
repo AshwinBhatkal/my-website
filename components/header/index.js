@@ -1,43 +1,19 @@
-import React from "react";
+import { useState } from "react";
 import {
   AppBar,
   Box,
   Container,
   IconButton,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   SwipeableDrawer,
   Toolbar,
   Typography,
   useMediaQuery,
 } from "@material-ui/core";
-import {
-  Close,
-  Inbox,
-  Mail,
-  Menu,
-  Person,
-  Phone,
-  Search,
-} from "@material-ui/icons";
-import { useState } from "react";
-import Link from "next/link";
+import { Close, Menu } from "@material-ui/icons";
+import NavList from "../navList";
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const menuItems = [
-    {
-      title: "About Me",
-      icon: <Person />,
-      path: "/about",
-    },
-    {
-      title: "Explore",
-      icon: <Search />,
-      path: "/explore",
-    },
-  ];
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("xs"));
 
   const toggleDrawer = (open) => (event) => {
@@ -50,29 +26,6 @@ export default function Header() {
     }
     setDrawerOpen(open);
   };
-
-  const CustomLI = React.forwardRef(({ onClick, href, item }, ref) => {
-    return (
-      <ListItem button component={"a"} href={href} onClick={onClick} ref={ref}>
-        <ListItemIcon>{item.icon}</ListItemIcon>
-        <ListItemText primary={item.title} />
-      </ListItem>
-    );
-  });
-
-  const NavList = () => (
-    <nav
-      style={{
-        display: `${isMobile ? "block" : "flex"}`,
-      }}
-    >
-      {menuItems.map((item, index) => (
-        <Link key={item.title} href={item.path} passHref>
-          <CustomLI item={item} />
-        </Link>
-      ))}
-    </nav>
-  );
 
   return (
     <>
@@ -105,7 +58,7 @@ export default function Header() {
                       <IconButton onClick={toggleDrawer(true)}>
                         <Close />
                       </IconButton>
-                      <NavList />
+                      <NavList isMobile/>
                     </Box>
                   </SwipeableDrawer>
                 </Box>

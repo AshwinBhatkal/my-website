@@ -2,7 +2,7 @@ import { Box, makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   hero: {
-    height: "calc(100vh - 64px)",
+    height: "75vh",
     width: "100%",
     display: "grid",
     alignItems: "center",
