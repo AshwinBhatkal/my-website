@@ -24,8 +24,10 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
       transform: "skewX(-15deg)",
     },
-    letterSpacing: theme.spacing(0.875),
     fontWeight: 100,
+    [theme.breakpoints.up("xs")]: {
+      letterSpacing: theme.spacing(0.875),
+    },
   },
   surName: {
     fontWeight: 500,
@@ -60,8 +62,10 @@ export default function Header() {
             >
               <Link href="/">
                 <Typography variant="h6" className={classes.logo}>
-                  ASHWIN&nbsp;
-                  <span className={classes.surName}>BHATKAL</span>
+                  {isMobile ? "A" : "ASHWIN "}
+                  <span className={classes.surName}>
+                    {isMobile ? "B" : "BHATKAL"}
+                  </span>
                 </Typography>
               </Link>
               {isMobile ? (

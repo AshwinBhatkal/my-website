@@ -4,13 +4,32 @@ import {
   List,
   ListItem,
   ListItemText,
+  makeStyles,
   Typography,
 } from "@material-ui/core";
 import Head from "next/head";
 import Hero from "../components/hero";
 import Layout from "../components/layout";
 
+const useStyles = makeStyles((theme) => ({
+  description: {
+    marginTop: theme.spacing(12),
+    marginBottom: theme.spacing(12),
+
+    [theme.breakpoints.down("sm")]: {
+      marginTop: theme.spacing(4),
+      marginBottom: theme.spacing(4),
+      color: "grey",
+
+      "& h4": {
+        fontSize: "1.5rem",
+      },
+    },
+  },
+}));
+
 export default function Home() {
+  const classes = useStyles();
   return (
     <Layout>
       <Head>
@@ -21,14 +40,12 @@ export default function Home() {
         <Hero />
       </section>
       <Container maxWidth="lg">
-        <Box clone my={12}>
-          <section>
-            <Typography variant="h4" align="center">
-              I’m an authentic individual passionate about a system that helps
-              people to be their most productive self.
-            </Typography>
-          </section>
-        </Box>
+        <section className={classes.description}>
+          <Typography variant="h4" align="center">
+            I’m an individual who believes success is best achieved by working
+            on all spheres of your life that you deem important.
+          </Typography>
+        </section>
       </Container>
       <Container maxWidth="md">
         <Box clone my={12}>

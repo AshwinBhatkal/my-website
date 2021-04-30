@@ -6,12 +6,12 @@ import Link from "next/link";
 export default function NavList({ isMobile }) {
   const menuItems = [
     {
-      title: "About",
+      title: "ABOUT",
       icon: <Person />,
       path: "/about",
     },
     {
-      title: "Explore",
+      title: "EXPLORE",
       icon: <Search />,
       path: "/explore",
     },
