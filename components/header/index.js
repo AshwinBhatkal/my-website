@@ -13,6 +13,7 @@ import {
 import { Close, Menu } from "@material-ui/icons";
 import NavList from "../navList";
 import Link from "next/link";
+import HideOnScroll from "../hideOnScroll";
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -52,53 +53,55 @@ export default function Header() {
 
   return (
     <>
-      <AppBar color="inherit">
-        <Toolbar>
-          <Container maxWidth="lg">
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              <Link href="/">
-                <Typography variant="h6" className={classes.logo}>
-                  {isMobile ? "A" : "ASHWIN "}
-                  <span className={classes.surName}>
-                    {isMobile ? "B" : "BHATKAL"}
-                  </span>
-                </Typography>
-              </Link>
-              {isMobile ? (
-                <Box>
-                  <IconButton onClick={toggleDrawer(true)}>
-                    <Menu />
-                  </IconButton>
-                  <SwipeableDrawer
-                    anchor={"right"}
-                    open={drawerOpen}
-                    onClose={toggleDrawer(false)}
-                    onOpen={toggleDrawer(true)}
-                  >
-                    <Box
-                      width={250}
-                      role="presentation"
-                      onClick={toggleDrawer(false)}
-                      onKeyDown={toggleDrawer(false)}
+      <HideOnScroll>
+        <AppBar color="inherit">
+          <Toolbar>
+            <Container maxWidth="lg">
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <Link href="/">
+                  <Typography variant="h6" className={classes.logo}>
+                    {isMobile ? "A" : "ASHWIN "}
+                    <span className={classes.surName}>
+                      {isMobile ? "B" : "BHATKAL"}
+                    </span>
+                  </Typography>
+                </Link>
+                {isMobile ? (
+                  <Box>
+                    <IconButton onClick={toggleDrawer(true)}>
+                      <Menu />
+                    </IconButton>
+                    <SwipeableDrawer
+                      anchor={"right"}
+                      open={drawerOpen}
+                      onClose={toggleDrawer(false)}
+                      onOpen={toggleDrawer(true)}
                     >
-                      <IconButton onClick={toggleDrawer(true)}>
-                        <Close />
-                      </IconButton>
-                      <NavList isMobile />
-                    </Box>
-                  </SwipeableDrawer>
-                </Box>
-              ) : (
-                <NavList />
-              )}
-            </Box>
-          </Container>
-        </Toolbar>
-      </AppBar>
+                      <Box
+                        width={250}
+                        role="presentation"
+                        onClick={toggleDrawer(false)}
+                        onKeyDown={toggleDrawer(false)}
+                      >
+                        <IconButton onClick={toggleDrawer(true)}>
+                          <Close />
+                        </IconButton>
+                        <NavList isMobile />
+                      </Box>
+                    </SwipeableDrawer>
+                  </Box>
+                ) : (
+                  <NavList />
+                )}
+              </Box>
+            </Container>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
       <Toolbar />
     </>
   );

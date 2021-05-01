@@ -6,13 +6,11 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "grid",
     alignItems: "center",
-    backgroundImage: "url(/images/hero1.jpg)",
+    backgroundImage: "url(/images/hero.jpg)",
     backgroundSize: "cover",
     color: theme.palette.common.white,
 
     "& h2": {
-      // mixBlendMode: "difference",
-      // color: theme.palette.common.white,
       fontWeight: 900,
     },
 
