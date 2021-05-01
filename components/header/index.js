@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       transform: "skewX(-15deg)",
     },
     fontWeight: 100,
-    [theme.breakpoints.up("xs")]: {
+    [theme.breakpoints.up("sm")]: {
       letterSpacing: theme.spacing(0.875),
     },
   },
