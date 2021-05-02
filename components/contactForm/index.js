@@ -19,10 +19,10 @@ export default function ContactForm() {
     setIsLoading(true);
     try {
       await emailjs.send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        process.env.SERVICE_ID,
+        process.env.TEMPLATE_ID,
         templateParams,
-        process.env.REACT_APP_USER_ID
+        process.env.USER_ID
       );
       reset();
       setIsLoading(false);
