@@ -18,7 +18,6 @@ import HideOnScroll from "../hideOnScroll";
 const useStyles = makeStyles((theme) => ({
   logo: {
     cursor: "pointer",
-    transform: "skewX(0deg)",
     transition: "transform 1s",
 
     "&:hover": {
@@ -26,9 +25,7 @@ const useStyles = makeStyles((theme) => ({
       transform: "skewX(-15deg)",
     },
     fontWeight: 100,
-    [theme.breakpoints.up("sm")]: {
-      letterSpacing: theme.spacing(0.875),
-    },
+    letterSpacing: theme.spacing(0.875),
   },
   surName: {
     fontWeight: 500,
@@ -51,6 +48,34 @@ export default function Header() {
     setDrawerOpen(open);
   };
 
+  const displayMobile = () => (
+    <Box>
+      <IconButton onClick={toggleDrawer(true)}>
+        <Menu />
+      </IconButton>
+      <SwipeableDrawer
+        anchor={"right"}
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+        onOpen={toggleDrawer(true)}
+      >
+        <Box
+          width={250}
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+        >
+          <IconButton onClick={toggleDrawer(true)}>
+            <Close />
+          </IconButton>
+          <NavList isMobile />
+        </Box>
+      </SwipeableDrawer>
+    </Box>
+  );
+
+  const displayDesktop = () => <NavList isMobile={false}/>;
+
   return (
     <>
       <HideOnScroll>
@@ -64,39 +89,11 @@ export default function Header() {
               >
                 <Link href="/">
                   <Typography variant="h6" className={classes.logo}>
-                    {isMobile ? "A" : "ASHWIN "}
-                    <span className={classes.surName}>
-                      {isMobile ? "B" : "BHATKAL"}
-                    </span>
+                    {"ASHWIN "}
+                    <span className={classes.surName}>{"BHATKAL"}</span>
                   </Typography>
                 </Link>
-                {isMobile ? (
-                  <Box>
-                    <IconButton onClick={toggleDrawer(true)}>
-                      <Menu />
-                    </IconButton>
-                    <SwipeableDrawer
-                      anchor={"right"}
-                      open={drawerOpen}
-                      onClose={toggleDrawer(false)}
-                      onOpen={toggleDrawer(true)}
-                    >
-                      <Box
-                        width={250}
-                        role="presentation"
-                        onClick={toggleDrawer(false)}
-                        onKeyDown={toggleDrawer(false)}
-                      >
-                        <IconButton onClick={toggleDrawer(true)}>
-                          <Close />
-                        </IconButton>
-                        <NavList isMobile />
-                      </Box>
-                    </SwipeableDrawer>
-                  </Box>
-                ) : (
-                  <NavList />
-                )}
+                {isMobile ? displayMobile() : displayDesktop()}
               </Box>
             </Container>
           </Toolbar>

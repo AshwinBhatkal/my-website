@@ -5,7 +5,7 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#D6A011",
-      // #D4A83A
+      // main: "#D4A83A",
     },
     secondary: {
       main: "#19857b",
@@ -14,7 +14,7 @@ const theme = createMuiTheme({
   typography: {
     body1: {
       fontSize: "1.125rem",
-      lineHeight: 2,
+      lineHeight: 1.875,
     },
   },
 });

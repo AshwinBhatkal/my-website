@@ -12,11 +12,8 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     minHeight: "100px",
     width: "100%",
-    display: "grid",
-    alignItems: "center",
     backgroundImage: "url(/images/hero.jpg)",
     backgroundSize: "cover",
-    color: theme.palette.common.black,
   },
   content: {
     display: "flex",

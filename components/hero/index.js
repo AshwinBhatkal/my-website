@@ -2,7 +2,7 @@ import { Box, makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   hero: {
-    minHeight: "70vh",
+    height: "100%",
     width: "100%",
     display: "grid",
     alignItems: "center",
@@ -15,8 +15,6 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.down("sm")]: {
-      minHeight: "62.5vh",
-
       "& h2": {
         fontSize: "3rem",
       },
@@ -25,12 +23,6 @@ const useStyles = makeStyles((theme) => ({
   heroText: {
     textAlign: "center",
   },
-  // overlay: {
-  //   position: "absolute",
-  //   bottom: 0,
-  //   right: 0,
-  //   transform: "rotate(180deg)",
-  // },
 }));
 
 export default function Hero() {
@@ -41,11 +33,6 @@ export default function Hero() {
       <Box className={classes.heroText}>
         <Typography variant="h2">ALOLA, I'M ASHWIN</Typography>
       </Box>
-      {/* <img
-        src="/images/heroTriangle.svg"
-        alt="overlay"
-        className={classes.overlay}
-      /> */}
     </Box>
   );
 }
