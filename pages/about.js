@@ -1,8 +1,21 @@
-import { Box, Container, Typography } from "@material-ui/core";
+import { Container, makeStyles } from "@material-ui/core";
 import Head from "next/head";
 import Layout from "../components/layout";
+import AboutMe from "../components/aboutMe";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(10),
+
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(8),
+    },
+  },
+}));
 
 export default function About() {
+  const classes = useStyles();
   return (
     <Layout>
       <Head>
@@ -10,19 +23,9 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxWidth="md">
-        <Typography variant="h3" gutterBottom>
-          About Me
-        </Typography>
-        <Box my={2} textAlign="justify">
-          {[...new Array(12)]
-            .map(
-              () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-            )
-            .join("\n")}
-        </Box>
+        <section className={classes.root}>
+          <AboutMe />
+        </section>
       </Container>
     </Layout>
   );

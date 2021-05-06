@@ -43,7 +43,19 @@ export default function Home() {
         <section className={classes.section}>
           <Container maxWidth="lg">
             <Typography variant="h4" align="center">
-              I believe success is best achieved by working on all spheres of
+              {/* I am a software developer and a writer. I want to be a storyteller
+              who can build understanding between people from different
+              cultures. */}
+              {/* I want to be a storyteller
+              who builds empathy and understanding between people from all walks
+              of life. */}
+              {/* <sup>&#x201c;</sup> */}
+              {/* Harmonizing all spheres of life that one deems important is the
+              best form of achieving success. */}
+              {/* <Typography variant="h5" color="textSecondary" component="span">
+                <em> - Ashwin Bhatkal</em>
+              </Typography> */}
+              I believe success is best achieved by harmonizing all spheres of
               your life that you deem important.
             </Typography>
           </Container>

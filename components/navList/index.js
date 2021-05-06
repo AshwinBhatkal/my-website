@@ -15,12 +15,17 @@ export default function NavList({ isMobile }) {
       icon: <Search />,
       path: "/explore",
     },
+    {
+      title: "CONTACT",
+      icon: <Search />,
+      path: "/#contact",
+    },
   ];
 
   const CustomListItem = React.forwardRef(({ onClick, href, item }, ref) => {
     return (
       <ListItem button component={"a"} href={href} onClick={onClick} ref={ref}>
-        <ListItemIcon>{item.icon}</ListItemIcon>
+        {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
         <ListItemText primary={item.title} />
       </ListItem>
     );

@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Link,
   Snackbar,
   TextField,
   Typography,
@@ -51,7 +52,16 @@ export default function ContactForm() {
         Get in touch
       </Typography>
       <Typography variant="subtitle1" align="center">
-        Want to work on a project or collaborate? Use the contact form below
+        Want to get in touch? Feel free to connect with me on{" "}
+        <Link href="https://www.instagram.com/ashwinbhatkal/" target="#">
+          <strong>Instagram</strong>
+        </Link>{" "}
+        or{" "}
+        <Link href="https://in.linkedin.com/in/ashwin-bhatkal/" target="#">
+          <strong>LinkedIn</strong>
+        </Link>
+        . If you’d like to reach out with a collaboration or a business
+        proposal, you can use the contact form below.
       </Typography>
       <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
         <Box mt={4} display="flex" gridGap={12}>
