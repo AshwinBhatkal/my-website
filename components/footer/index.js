@@ -25,7 +25,7 @@ export default function Footer() {
           <Box>
             {/* This is the social icons section in the footer */}
             {socialButtons.map((social) => (
-              <SocialIcon social={social} />
+              <SocialIcon social={social} key={social.label} />
             ))}
           </Box>
         </Box>
@@ -37,8 +37,9 @@ export default function Footer() {
 const useStyles = makeStyles((theme) => ({
   footer: {
     width: "100%",
-    backgroundImage: "url(/images/hero.jpg)",
-    backgroundSize: "cover",
+    // backgroundImage: "url(/images/hero.jpg)",
+    // backgroundSize: "cover",
+    background: "#FFCB05"
   },
   content: {
     display: "flex",
