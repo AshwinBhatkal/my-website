@@ -18,7 +18,7 @@ export default function NavList({ isMobile }) {
     {
       title: "CONTACT",
       icon: <Search />,
-      path: "/#contact",
+      path: "/about/#contact",
     },
   ];
 

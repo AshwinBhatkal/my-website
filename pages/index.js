@@ -1,79 +1,100 @@
 import Head from "next/head";
 import Layout from "../components/layout";
-import Hero from "../components/hero";
-import MyIdeas from "../components/myIdeas";
-import ContactForm from "../components/contactForm";
 import { Box, Container, makeStyles, Typography } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-  landing: {
-    display: "flex",
-    flexDirection: "column",
-    height: "calc(100vh - 60px)",
-  },
-
-  hero: {
-    flexGrow: 1,
-  },
-
-  section: {
-    marginTop: theme.spacing(10),
-    marginBottom: theme.spacing(10),
-
-    [theme.breakpoints.down("sm")]: {
-      marginTop: theme.spacing(8),
-      marginBottom: theme.spacing(8),
-    },
-  },
-}));
+import React from "react";
 
 export default function Home() {
   const classes = useStyles();
 
   return (
-    <Layout>
+    <Layout footer={false}>
       <Head>
-        <title>Ashwin Bhatkal - Writer, Developer</title>
+        <title>Ashwin Bhatkal - Writer, Developer, Product Enthusiast</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box className={classes.landing}>
-        <section className={classes.hero}>
-          <Hero />
-        </section>
-        <section className={classes.section}>
-          <Container maxWidth="lg">
-            <Typography variant="h4" align="center">
-              {/* I am a software developer and a writer. I want to be a storyteller
-              who can build understanding between people from different
-              cultures. */}
-              {/* I want to be a storyteller
-              who builds empathy and understanding between people from all walks
-              of life. */}
-              {/* <sup>&#x201c;</sup> */}
-              {/* Harmonizing all spheres of life that one deems important is the
-              best form of achieving success. */}
-              {/* <Typography variant="h5" color="textSecondary" component="span">
-                <em> - Ashwin Bhatkal</em>
-              </Typography> */}
-              I believe success is best achieved by harmonizing all spheres of
-              your life that you deem important.
-            </Typography>
-          </Container>
-        </section>
-      </Box>
-      <Container maxWidth="md">
-        <section
-          className={classes.section}
-          style={{
-            marginTop: 0,
-          }}
+      <section className={classes.hero}>
+        <video
+          autoPlay
+          muted
+          loop
+          className={classes.bgVideo}
+          poster="https://images.unsplash.com/photo-1492931307820-62fa5a68e0df"
         >
-          <MyIdeas />
-        </section>
-        <section className={classes.section}>
-          <ContactForm />
-        </section>
-      </Container>
+          <source src="./videos/hero.mp4" type="video/mp4" />
+        </video>
+        <div className={classes.heroWrapper}>
+          <div className={classes.heroTextContainer}>
+            <Typography variant="h2" className={classes.heroText} gutterBottom>
+              Hi there,
+            </Typography>
+            <Typography
+              variant="h1"
+              className={classes.heroText}
+              style={{ lineHeight: 0.875 }}
+            >
+              I'm Ashwin
+            </Typography>
+          </div>
+          <div className={classes.me}>
+            <img height="300" width="300" src="./images/about.jpg" />
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
+
+const useStyles = makeStyles((theme) => ({
+  hero: {
+    display: "flex",
+    height: "calc(100vh - 64px)",
+    alignItems: "center",
+    justifyContent: "center",
+    flexGrow: 1,
+  },
+
+  bgVideo: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    height: "100vh",
+    zIndex: -50,
+  },
+
+  heroWrapper: {
+    display: "flex",
+    alignItems: "flex-end",
+  },
+
+  heroTextContainer: {
+    textAlign: "right",
+  },
+
+  me: {
+    borderRadius: "40% 40% 40% 0",
+    overflow: "hidden",
+    marginLeft: theme.spacing(2),
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    heroWrapper: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
+
+    heroTextContainer: {
+      textAlign: "center",
+    },
+
+    me: {
+      borderRadius: "0 40% 40% 40%",
+      overflow: "hidden",
+      marginTop: theme.spacing(1),
+    },
+  },
+
+  heroText: {
+    fontFamily: "Rubik Mono One",
+    color: theme.palette.secondary.main,
+  },
+}));
