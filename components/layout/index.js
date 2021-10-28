@@ -14,7 +14,7 @@ export default function Layout(props) {
         <Header />
         <main>{props.children}</main>
       </Box>
-      {props.footer && <Footer />}
+      {props.footer !== false && <Footer />}
     </Box>
   );
 }
