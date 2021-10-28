@@ -1,6 +1,11 @@
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../components/layout";
-import { Box, Container, makeStyles, Typography } from "@material-ui/core";
+import {
+  Button,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import React from "react";
 
 export default function Home() {
@@ -18,19 +23,22 @@ export default function Home() {
           muted
           loop
           className={classes.bgVideo}
-          poster="https://images.unsplash.com/photo-1492931307820-62fa5a68e0df"
         >
           <source src="./videos/hero.mp4" type="video/mp4" />
         </video>
         <div className={classes.heroWrapper}>
-          <div className={classes.heroTextContainer}>
-            <Typography variant="h2" className={classes.heroText} gutterBottom>
+          <div>
+            <Typography
+              variant="h2"
+              className={classes.heroText}
+              color={"primary"}
+            >
               Hi there,
             </Typography>
             <Typography
               variant="h1"
               className={classes.heroText}
-              style={{ lineHeight: 0.875 }}
+              color={"primary"}
             >
               I'm Ashwin
             </Typography>
@@ -38,6 +46,18 @@ export default function Home() {
           <div className={classes.me}>
             <img height="300" width="300" src="./images/about.jpg" />
           </div>
+        </div>
+        <div className={classes.buttonContainer}>
+          <Link href={"/about"} passHref>
+            <Button variant="outlined" color="primary">
+              About ME
+            </Button>
+          </Link>
+          <Link href={"/about#contact"} passHref>
+            <Button variant="contained" color="secondary">
+              Contact
+            </Button>
+          </Link>
         </div>
       </section>
     </Layout>
@@ -47,6 +67,7 @@ export default function Home() {
 const useStyles = makeStyles((theme) => ({
   hero: {
     display: "flex",
+    flexDirection: "column",
     height: "calc(100vh - 64px)",
     alignItems: "center",
     justifyContent: "center",
@@ -64,9 +85,11 @@ const useStyles = makeStyles((theme) => ({
   heroWrapper: {
     display: "flex",
     alignItems: "flex-end",
+    justifyContent: "center",
   },
 
-  heroTextContainer: {
+  heroText: {
+    fontFamily: "Rubik Mono One",
     textAlign: "right",
   },
 
@@ -74,6 +97,27 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "40% 40% 40% 0",
     overflow: "hidden",
     marginLeft: theme.spacing(2),
+    marginBottom: theme.spacing(2.25),
+  },
+
+  buttonContainer: {
+    display: "flex",
+    width: "300px",
+    justifyContent: "space-between",
+    marginTop: theme.spacing(2),
+  },
+
+  [theme.breakpoints.up("sm")]: {
+    buttonContainer: {
+      display: "none",
+    },
+  },
+
+  [theme.breakpoints.down("md")]: {
+    me: {
+      display: "none",
+      marginBottom: theme.spacing(2),
+    },
   },
 
   [theme.breakpoints.down("sm")]: {
@@ -82,19 +126,14 @@ const useStyles = makeStyles((theme) => ({
       alignItems: "center",
     },
 
-    heroTextContainer: {
+    heroText: {
       textAlign: "center",
     },
 
     me: {
-      borderRadius: "0 40% 40% 40%",
-      overflow: "hidden",
-      marginTop: theme.spacing(1),
+      borderRadius: "50%",
+      marginTop: theme.spacing(3),
+      marginLeft: theme.spacing(0),
     },
-  },
-
-  heroText: {
-    fontFamily: "Rubik Mono One",
-    color: theme.palette.secondary.main,
   },
 }));

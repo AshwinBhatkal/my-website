@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import AboutMe from "../components/aboutMe";
 import MyIdeas from "../components/myIdeas";
 import ContactForm from "../components/contactForm";
-import { headlines } from "./components/data";
+import { headlines } from "../components/data";
 
 export default function About() {
   const classes = useStyles();
