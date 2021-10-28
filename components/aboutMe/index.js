@@ -96,7 +96,7 @@ export default function AboutMe() {
         </Box>
         <Box>
           <img
-            src="/images/about3.jpg"
+            src="/images/about.jpg"
             alt="Picture of the author"
             className={classes.picture}
           />

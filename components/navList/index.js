@@ -10,15 +10,15 @@ export default function NavList({ isMobile }) {
       icon: <Person />,
       path: "/about",
     },
-    {
-      title: "EXPLORE",
-      icon: <Search />,
-      path: "/explore",
-    },
+    // {
+    //   title: "EXPLORE",
+    //   icon: <Search />,
+    //   path: "/explore",
+    // },
     {
       title: "CONTACT",
       icon: <Search />,
-      path: "/#contact",
+      path: "/about/#contact",
     },
   ];
 
