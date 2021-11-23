@@ -5,6 +5,10 @@ import Link from "next/link";
 export default function NavList({ isMobile }) {
   const menuItems = [
     {
+      title: "HOME",
+      path: "/",
+    },
+    {
       title: "ABOUT",
       path: "/about",
     },

@@ -1,5 +1,6 @@
 import { Container, makeStyles, Typography } from "@material-ui/core";
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../components/layout";
 import AboutMe from "../components/aboutMe";
 import MyIdeas from "../components/myIdeas";
@@ -34,6 +35,17 @@ export default function About() {
         >
           <MyIdeas />
         </section>
+        {/* <section
+          className={classes.section}
+          style={{
+            marginTop: 0,
+          }}
+        >
+          <Typography variant="h4" align="center" key={1}>
+            If you think you can help me in 
+            <Link href="/my-impossible-list">My Impossible List</Link>
+          </Typography>
+        </section> */}
       </Container>
     </Layout>
   );
@@ -41,7 +53,7 @@ export default function About() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(6),
     marginBottom: theme.spacing(10),
 
     [theme.breakpoints.down("sm")]: {
