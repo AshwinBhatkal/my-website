@@ -3,7 +3,6 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import AboutMe from "../components/aboutMe";
 import MyIdeas from "../components/myIdeas";
-import ContactForm from "../components/contactForm";
 import { headlines } from "../components/data";
 
 export default function About() {
@@ -11,7 +10,7 @@ export default function About() {
   return (
     <Layout>
       <Head>
-        <title>About - Ashwin Bhatkal</title>
+        <title>About | Ashwin Bhatkal</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxWidth="md">
@@ -34,9 +33,6 @@ export default function About() {
           }}
         >
           <MyIdeas />
-        </section>
-        <section className={classes.section}>
-          <ContactForm />
         </section>
       </Container>
     </Layout>

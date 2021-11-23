@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Layout footer={false}>
       <Head>
-        <title>Ashwin Bhatkal - Writer, Developer, Product Enthusiast</title>
+        <title>Ashwin Bhatkal | Writer, Developer, Product Enthusiast</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className={classes.hero}>
