@@ -119,16 +119,16 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
       marginBottom: theme.spacing(2),
     },
+
+    heroText: {
+      textAlign: "center",
+    },
   },
 
   [theme.breakpoints.down("sm")]: {
     heroWrapper: {
       flexDirection: "column",
       alignItems: "center",
-    },
-
-    heroText: {
-      textAlign: "center",
     },
 
     me: {
