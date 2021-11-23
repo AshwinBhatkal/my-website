@@ -12,6 +12,7 @@ import ContactForm from "../components/contactForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDev,
+  faGithub,
   faInstagram,
   faLinkedinIn,
   faMediumM,
@@ -30,12 +31,12 @@ const social = [
     title: "Twitter",
   },
   {
-    url: "https://www.instagram.com/ashwinbhatkal",
-    icon: faInstagram,
-    title: "Instagram",
+    url: "https://github.com/AshwinBhatkal",
+    icon: faGithub,
+    title: "GitHub",
   },
   {
-    url: "https://ashwinbhatkal.medium.com/",
+    url: "https://ashwinbhatkal.medium.com",
     icon: faMediumM,
     title: "Medium",
   },
@@ -43,6 +44,11 @@ const social = [
     url: "https://dev.to/ashwinbhatkal",
     icon: faDev,
     title: "Dev.to",
+  },
+  {
+    url: "https://www.instagram.com/ashwinbhatkal",
+    icon: faInstagram,
+    title: "Instagram",
   },
 ];
 
