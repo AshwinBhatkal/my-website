@@ -14,7 +14,7 @@ const ideas = [
 export default function MyIdeas() {
   return (
     <>
-      <Typography variant="h2" align="center" gutterBottom>
+      <Typography variant="h3" align="center" gutterBottom>
         Ideas I Live By
       </Typography>
       <List>

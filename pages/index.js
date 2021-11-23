@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Layout footer={false}>
       <Head>
-        <title>Ashwin Bhatkal - Writer, Developer, Product Enthusiast</title>
+        <title>Ashwin Bhatkal | Software Developer, Writer, Product Enthusiast</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className={classes.hero}>
@@ -119,16 +119,16 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
       marginBottom: theme.spacing(2),
     },
+
+    heroText: {
+      textAlign: "center",
+    },
   },
 
   [theme.breakpoints.down("sm")]: {
     heroWrapper: {
       flexDirection: "column",
       alignItems: "center",
-    },
-
-    heroText: {
-      textAlign: "center",
     },
 
     me: {

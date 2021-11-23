@@ -1,4 +1,4 @@
-import { Box, makeStyles, Typography } from "@material-ui/core";
+import { Box, Link, makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   about: {
@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     flexWrap: "wrap-reverse",
+    marginTop: theme.spacing(4),
 
     "& div": {
       width: "45%",
@@ -32,8 +33,8 @@ export default function AboutMe() {
   const classes = useStyles();
   return (
     <>
-      <Typography variant="h2" align="center" gutterBottom>
-        ABOUT ME
+      <Typography variant="h3" align="center" gutterBottom>
+        About Me
       </Typography>
       <Box className={classes.about}>
         <Box>
@@ -84,8 +85,15 @@ export default function AboutMe() {
 
           <Typography variant="subtitle1" gutterBottom align="justify">
             While I do have a guilt free love for cheese and chicken, I love
-            food in general, and would be up to cook together or eat at any
-            place and at any time.
+            food in general, and would be up to{" "}
+            <Link
+              href="https://ashwinbhatkal.notion.site/The-Cook-in-Me-cac56c731f83437c921dffd471b2aad7"
+              target="_blank"
+              title="Ashwin Bhatkal's Recipes Page"
+            >
+              <b>cook</b>
+            </Link>{" "}
+            together or eat at any place and at any time.
             {/* Though I like trying all cuisine, I try to stay away
           from Asian. */}
           </Typography>
