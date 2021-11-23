@@ -78,7 +78,8 @@ const useStyles = makeStyles((theme) => ({
     position: "fixed",
     top: 0,
     left: 0,
-    height: "100vh",
+    minHeight: "100vh",
+    minWidth: "100%",
     zIndex: -50,
   },
 
