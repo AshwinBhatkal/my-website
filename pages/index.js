@@ -3,14 +3,14 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import { Button, makeStyles, Typography } from "@material-ui/core";
 import React, { useEffect } from "react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 export default function Home() {
   const classes = useStyles();
 
   useEffect(() => {
-    ReactGA.initialize(process.env.GOOGLE_ANALYTICS.UA_TRACKING_ID);
-    ReactGA.pageview("/");
+    ReactGA.initialize(process.env.GOOGLE_ANALYTICS.GA4_MEASUREMENT_ID);
+    ReactGA.send({ hitType: "pageview", page: "/" });
   }, []);
 
   return (
@@ -52,7 +52,7 @@ export default function Home() {
               About ME
             </Button>
           </Link>
-          <Link href={"/about#contact"} passHref>
+          <Link href={"/contact"} passHref>
             <Button variant="contained" color="secondary">
               Contact
             </Button>
