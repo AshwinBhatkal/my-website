@@ -1,29 +1,28 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/layout";
-import {
-  Button,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
-import React from "react";
+import { Button, makeStyles, Typography } from "@material-ui/core";
+import React, { useEffect } from "react";
+import ReactGA from "react-ga";
 
 export default function Home() {
   const classes = useStyles();
 
+  useEffect(() => {
+    ReactGA.initialize("G-PJNF3FZLQ0");
+    ReactGA.pageview("/");
+  }, []);
+
   return (
     <Layout footer={false}>
       <Head>
-        <title>Ashwin Bhatkal | Software Developer, Writer, Product Enthusiast</title>
+        <title>
+          Ashwin Bhatkal | Software Developer, Writer, Product Enthusiast
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className={classes.hero}>
-        <video
-          autoPlay
-          muted
-          loop
-          className={classes.bgVideo}
-        >
+        <video autoPlay muted loop className={classes.bgVideo}>
           <source src="./videos/hero.mp4" type="video/mp4" />
         </video>
         <div className={classes.heroWrapper}>
