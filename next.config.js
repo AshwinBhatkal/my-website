@@ -8,5 +8,8 @@ module.exports = {
     GOOGLE_ANALYTICS: {
       GA4_MEASUREMENT_ID: process.env.GA4_MEASUREMENT_ID,
     },
+    GOOGLE_TAG_MANAGER: {
+      GTM_ID: process.env.GTM_ID
+    }
   },
 };
