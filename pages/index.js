@@ -9,7 +9,7 @@ export default function Home() {
   const classes = useStyles();
 
   useEffect(() => {
-    ReactGA.initialize("G-PJNF3FZLQ0");
+    ReactGA.initialize(process.env.GOOGLE_ANALYTICS.UA_TRACKING_ID);
     ReactGA.pageview("/");
   }, []);
 
