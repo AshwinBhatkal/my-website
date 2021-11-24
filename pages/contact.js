@@ -19,7 +19,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-const social = [
+const socialIcons = [
   {
     url: "https://linkedin.com/in/ashwin-bhatkal",
     icon: faLinkedinIn,
@@ -67,8 +67,8 @@ export default function Contact() {
             You can find me on
           </Typography>
           <Box textAlign="center" my={4}>
-            {social.map((socialIcon) => (
-              <Link href={socialIcon.url} passHref>
+            {socialIcons.map((socialIcon) => (
+              <Link href={socialIcon.url} key={socialIcon.title} passHref>
                 <IconButton
                   color="primary"
                   aria-label="LinkedIn"

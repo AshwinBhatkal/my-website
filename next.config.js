@@ -6,7 +6,7 @@ module.exports = {
       USER_ID: process.env.USER_ID,
     },
     GOOGLE_ANALYTICS: {
-      GA4_MEASUREMENT_ID: process.env.GA4_MEASUREMENT_ID,
+      GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
     },
   },
 };
