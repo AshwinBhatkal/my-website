@@ -14,6 +14,7 @@ import { Close, Menu } from "@material-ui/icons";
 import NavList from "../navList";
 import Link from "next/link";
 import HideOnScroll from "../hideOnScroll";
+import paths from "utils/paths";
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -87,7 +88,7 @@ export default function Header() {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Link href="/">
+                <Link href={paths.home}>
                   <Typography variant="h6" className={classes.logo}>
                     {"ASHWIN "}
                     <span className={classes.surName}>{"BHATKAL"}</span>
