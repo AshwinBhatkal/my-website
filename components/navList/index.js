@@ -1,24 +1,21 @@
 import React from "react";
 import { ListItem, ListItemText } from "@material-ui/core";
 import Link from "next/link";
+import paths from "utils/paths";
 
 export default function NavList({ isMobile }) {
   const menuItems = [
     {
       title: "HOME",
-      path: "/",
+      path: paths.home,
     },
     {
       title: "ABOUT",
-      path: "/about",
+      path: paths.about,
     },
-    // {
-    //   title: "EXPLORE",
-    //   path: "/explore",
-    // },
     {
       title: "CONTACT",
-      path: "/contact",
+      path: paths.contact,
     },
   ];
 

@@ -1,13 +1,21 @@
 import { Container, makeStyles, Typography } from "@material-ui/core";
 import Head from "next/head";
-import Link from "next/link";
 import Layout from "../components/layout";
 import AboutMe from "../components/aboutMe";
 import MyIdeas from "../components/myIdeas";
 import { headlines } from "../components/data";
+import ReactGA from "react-ga4";
+import { useEffect } from "react";
+import paths from "utils/paths";
 
 export default function About() {
   const classes = useStyles();
+
+  useEffect(() => {
+    ReactGA.initialize(process.env.GOOGLE_ANALYTICS.GA4_MEASUREMENT_ID);
+    ReactGA.send({ hitType: "pageview", page: paths.home });
+  }, []);
+
   return (
     <Layout>
       <Head>
@@ -35,17 +43,6 @@ export default function About() {
         >
           <MyIdeas />
         </section>
-        {/* <section
-          className={classes.section}
-          style={{
-            marginTop: 0,
-          }}
-        >
-          <Typography variant="h4" align="center" key={1}>
-            If you think you can help me in 
-            <Link href="/my-impossible-list">My Impossible List</Link>
-          </Typography>
-        </section> */}
       </Container>
     </Layout>
   );
