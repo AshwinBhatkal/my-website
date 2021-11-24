@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import TagManager from "react-gtm-module";
 import theme from "../styles/theme";
 import "../styles/global.css";
 
@@ -13,6 +14,11 @@ export default function MyApp(props) {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+
+    // Google Tag Manager Setup
+    TagManager.initialize({
+      gtmId: "GTM-TJD4MLR",
+    });
   }, []);
 
   return (

@@ -5,7 +5,6 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/layout";
@@ -19,8 +18,6 @@ import {
   faMediumM,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import ReactGA from "react-ga4";
-import paths from "utils/paths";
 
 const social = [
   {
@@ -57,11 +54,6 @@ const social = [
 
 export default function Contact() {
   const classes = useStyles();
-
-  useEffect(() => {
-    ReactGA.initialize(process.env.GOOGLE_ANALYTICS.GA4_MEASUREMENT_ID);
-    ReactGA.send({ hitType: "pageview", page: paths.contact });
-  }, []);
 
   return (
     <Layout>
