@@ -20,10 +20,10 @@ export default function ContactForm() {
     setIsLoading(true);
     try {
       await emailjs.send(
-        process.env.SERVICE_ID,
-        process.env.TEMPLATE_ID,
+        process.env.EMAIL_JS.SERVICE_ID,
+        process.env.EMAIL_JS.TEMPLATE_ID,
         templateParams,
-        process.env.USER_ID
+        process.env.EMAIL_JS.USER_ID
       );
       reset();
       setIsLoading(false);
