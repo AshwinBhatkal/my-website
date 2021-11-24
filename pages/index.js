@@ -2,17 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/layout";
 import { Button, makeStyles, Typography } from "@material-ui/core";
-import React, { useEffect } from "react";
-import ReactGA from "react-ga4";
 import paths from "utils/paths";
 
 export default function Home() {
   const classes = useStyles();
-
-  useEffect(() => {
-    ReactGA.initialize(process.env.GOOGLE_ANALYTICS.GA4_MEASUREMENT_ID);
-    ReactGA.send({ hitType: "pageview", page: paths.home });
-  }, []);
 
   return (
     <Layout footer={false}>

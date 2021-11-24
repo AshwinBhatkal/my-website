@@ -4,17 +4,9 @@ import Layout from "../components/layout";
 import AboutMe from "../components/aboutMe";
 import MyIdeas from "../components/myIdeas";
 import { headlines } from "../components/data";
-import ReactGA from "react-ga4";
-import { useEffect } from "react";
-import paths from "utils/paths";
 
 export default function About() {
   const classes = useStyles();
-
-  useEffect(() => {
-    ReactGA.initialize(process.env.GOOGLE_ANALYTICS.GA4_MEASUREMENT_ID);
-    ReactGA.send({ hitType: "pageview", page: paths.home });
-  }, []);
 
   return (
     <Layout>
