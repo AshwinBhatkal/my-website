@@ -14,6 +14,10 @@ export default function NavList({ isMobile }) {
       path: paths.about,
     },
     {
+      title: "EXPLORE",
+      path: paths.explore,
+    },
+    {
       title: "CONTACT",
       path: paths.contact,
     },
