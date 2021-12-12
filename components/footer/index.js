@@ -1,6 +1,6 @@
 import { Box, Container, makeStyles, Typography } from "@material-ui/core";
-import SocialIcon from "../socialIcon";
-import { socialButtons } from "./data";
+import socialPlatforms from "data/socialPlatforms";
+import IconButtonLink from "../iconButtonLink";
 
 // The footer contains the copyright and the social icons
 export default function Footer() {
@@ -24,9 +24,16 @@ export default function Footer() {
           </Box>
           <Box>
             {/* This is the social icons section in the footer */}
-            {socialButtons.map((social) => (
-              <SocialIcon social={social} key={social.label} />
-            ))}
+            {[socialPlatforms[0], socialPlatforms[1], socialPlatforms[5]].map(
+              (platform) => (
+                <IconButtonLink
+                  url={platform.url}
+                  title={platform.title}
+                  icon={platform.icon}
+                  key={platform.title}
+                />
+              )
+            )}
           </Box>
         </Box>
       </Container>
@@ -39,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     // backgroundImage: "url(/images/hero.jpg)",
     // backgroundSize: "cover",
-    background: "#FFCB05"
+    background: "#FFCB05",
   },
   content: {
     display: "flex",
