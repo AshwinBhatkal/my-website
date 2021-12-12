@@ -9,7 +9,7 @@ export default function IconButtonLink({ url, title, icon, useSpacing }) {
       <IconButton
         color="primary"
         aria-label={title}
-        component="a"
+        // component="a"
         target="_blank"
         title={title}
       >
