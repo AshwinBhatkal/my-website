@@ -10,6 +10,10 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta
+            name="description"
+            content="I'm a software developer, writer and product enthusiast. Check out my content and/or connect with me."
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
