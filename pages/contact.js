@@ -18,6 +18,7 @@ import {
   faMediumM,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { faChess } from "@fortawesome/free-solid-svg-icons";
 
 const social = [
   {
@@ -49,6 +50,11 @@ const social = [
     url: "https://www.instagram.com/ashwinbhatkal",
     icon: faInstagram,
     title: "Instagram",
+  },
+  {
+    url: "https://www.chess.com/member/ashwinbhatkal",
+    icon: faChess,
+    title: "Chess.com",
   },
 ];
 
