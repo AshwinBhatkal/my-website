@@ -4,8 +4,31 @@ import { useRouter } from "next/router";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../styles/theme";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "../styles/global.css";
 import { GTM_ID, pageview } from "lib/gtm";
+import { config, library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faDev,
+  faGithub,
+  faInstagram,
+  faLinkedinIn,
+  faMediumM,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { faChess } from "@fortawesome/free-solid-svg-icons";
+
+// See https://github.com/FortAwesome/react-fontawesome#integrating-with-other-tools-and-frameworks
+config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
+library.add(
+  faDev,
+  faGithub,
+  faInstagram,
+  faLinkedinIn,
+  faMediumM,
+  faTwitter,
+  faChess
+);
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
