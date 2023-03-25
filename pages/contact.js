@@ -10,50 +10,41 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import ContactForm from "../components/contactForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faDev,
-  faGithub,
-  faInstagram,
-  faLinkedinIn,
-  faMediumM,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { faChess } from "@fortawesome/free-solid-svg-icons";
 
 const social = [
   {
     url: "https://linkedin.com/in/ashwin-bhatkal",
-    icon: faLinkedinIn,
+    icon: ["fab", "linkedin-in"],
     title: "LinkedIn",
   },
   {
     url: "https://twitter.com/AshwinBhatkal",
-    icon: faTwitter,
+    icon: ["fab", "twitter"],
     title: "Twitter",
   },
   {
     url: "https://github.com/AshwinBhatkal",
-    icon: faGithub,
+    icon: ["fab", "github"],
     title: "GitHub",
   },
   {
     url: "https://ashwinbhatkal.medium.com",
-    icon: faMediumM,
+    icon: ["fab", "medium-m"],
     title: "Medium",
   },
   {
     url: "https://dev.to/ashwinbhatkal",
-    icon: faDev,
+    icon: ["fab", "dev"],
     title: "Dev.to",
   },
   {
     url: "https://www.instagram.com/ashwinbhatkal",
-    icon: faInstagram,
+    icon: ["fab", "instagram"],
     title: "Instagram",
   },
   {
     url: "https://www.chess.com/member/ashwinbhatkal",
-    icon: faChess,
+    icon: ["fas", "chess"],
     title: "Chess.com",
   },
 ];
