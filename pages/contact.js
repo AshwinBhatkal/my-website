@@ -65,7 +65,7 @@ export default function Contact() {
           </Typography>
           <Box textAlign="center" my={4}>
             {social.map((socialIcon) => (
-              <Link href={socialIcon.url} passHref>
+              <Link href={socialIcon.url} passHref key={socialIcon.title}>
                 <IconButton
                   color="primary"
                   aria-label="LinkedIn"

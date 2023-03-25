@@ -30,7 +30,7 @@ export default function ContactForm() {
       setOpen(true);
       setMessage("Form Submitted Succesfully");
     } catch (e) {
-      // console.log(e);
+      console.error(e);
       setIsLoading(false);
       setOpen(true);
       setMessage("Failed to Submit Form");
